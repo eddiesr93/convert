@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number'] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+  }
+}
+
+@layer components {
+  html {
+    @apply flex h-screen max-h-screen min-h-screen flex-col overflow-hidden border-r;
+  }
+
+  body {
+    @apply flex flex-auto flex-grow overflow-y-auto overflow-x-hidden;
+  }
+
+  #root {
+    @apply flex flex-col grow;
+  }
+
+  ::-webkit-scrollbar {
+    @apply h-2 w-2;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-md;
+    border: 1px solid transparent;
+    box-shadow: inset 0 0 0 12px rgba(47, 58, 75, 0.4);
+  }
+
+  ::-webkit-scrollbar-thumb:active,
+  ::-webkit-scrollbar-thumb:hover {
+    box-shadow: inset 0 0 0 12px rgba(47, 58, 75, 0.5);
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 0 12px rgba(255, 255, 255, 0.15);
+  }
+
+  .dark ::-webkit-scrollbar-thumb:active,
+  .dark ::-webkit-scrollbar-thumb:hover {
+    box-shadow: inset 0 0 0 12px rgba(255, 255, 255, 0.18);
+  }
+
+}
